@@ -16,6 +16,7 @@ addons:
     sources:
       - google-chrome
     packages:
+      - dpkg
       - google-chrome-stable
 
 cache:
