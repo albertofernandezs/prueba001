@@ -12,6 +12,7 @@ after_success:
 addons:
   chrome: stable
   apt:
+    update: true
     sources:
       - google-chrome
     packages:
