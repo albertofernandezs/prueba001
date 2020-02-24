@@ -35,6 +35,12 @@ module.exports = function (config) {
     coverageReporter: {
       type : 'lcov',
       dir : 'coverage/'
+    },
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
     }
   });
 };
