@@ -14,7 +14,7 @@ sources:
   - google-chrome
 packages:
   - dpkg 
-  - google-chrome-stable
+  - google-chrome-stable --allow-unauthenticated
 
 cache:
   directories:
