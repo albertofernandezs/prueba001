@@ -1,23 +1,26 @@
 language: node_js
 node_js:
-  - "0.10"
-  
+  - "10"
+dist: trusty
+sudo: required
+addons:
+  chrome: stable
+  sonarcloud:
+    organization: "aboudard"
+branches:
+  only:
+    - master
+before_script:
+  - npm install -g --silent @angular/cli@7.3.5
+script:
+  - ng lint
+  - npm run cypress:ci
+  - npm run test
+  - sonar-scanner
+  - npm run buildgp
+
 before_install:
 - pip install --user codecov
 after_success:
 - codecov
-
-before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - webdriver-manager update
-  - npm install
-  - npm install -g bower
-  - bower install
-  - gulp > /dev/null & # start server
-  - sleep 10 # give server time to start
-
-
-script:
-  - node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run
 
