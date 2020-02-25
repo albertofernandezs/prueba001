@@ -23,5 +23,5 @@ script:
 before_install:
 - pip install --user codecov
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash) -t 6d0cfb5b-59be-42fe-94f4-9ab5be0c4446
 
