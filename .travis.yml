@@ -5,11 +5,6 @@ language: node_js
 node_js:
   - '10'
 
-before_install:
-- pip install --user codecov
-after_success:
-- codecov
-
 sources:
   - google-chrome
 packages:
@@ -25,3 +20,8 @@ install:
 
 script:
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+
+before_install:
+- pip install --user codecov
+after_success:
+- codecov
