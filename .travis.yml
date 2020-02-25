@@ -1,26 +1,26 @@
+dist: trusty
+sudo: false
+
 language: node_js
 node_js:
-  - "10"
-dist: trusty
-sudo: required
-addons:
-  chrome: stable
-  sonarcloud:
-    organization: "aboudard"
-branches:
-  only:
-    - master
-before_script:
-  - npm install -g --silent @angular/cli@7.3.5
-script:
-  - ng lint
-  - npm run cypress:ci
-  - npm run test
-  - sonar-scanner
-  - npm run buildgp
+  - '8'
 
 before_install:
 - pip install --user codecov
 after_success:
 - codecov
 
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+cache:
+  directories:
+    - ./node_modules
+
+install:
+  - npm install
+
+script:
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
