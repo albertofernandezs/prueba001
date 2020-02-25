@@ -20,7 +20,6 @@ install:
 
 script:
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
-  - mvn cobertura:cobertura
 before_install:
 - pip install --user codecov
 after_success:
