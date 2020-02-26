@@ -19,7 +19,7 @@ install:
   - npm install codecov -g
 
 script:
-  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+  - npm test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 env:
 - CODECOV_TOKEN="6d0cfb5b-59be-42fe-94f4-9ab5be0c4446"
 before_install:
