@@ -1,5 +1,5 @@
 codecov:
-  token: "<some token here>"
+  token: "6d0cfb5b-59be-42fe-94f4-9ab5be0c4446"
   bot: "codecov-io"
   ci:
     - "travis.org"
